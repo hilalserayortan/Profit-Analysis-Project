@@ -8,11 +8,25 @@ public class Main {
     static String[] commodities = {"Gold", "Oil", "Silver", "Wheat", "Copper"};
     static String[] months = {"January","February","March","April","May","June",
                               "July","August","September","October","November","December"};
-    
 
+    static int [][][] = new int[MONTHS][DAYS][COMMS];
     public static void loadData() {
-    }
+        for (m=0;m<MONTHS;m++) {
+            File file = new File (" Data_Files/ " + months[m] + ".txt");
+            Scanner sc = new Scanner(file);
 
+        while (sc.hasNextLine()) {
+            String line= sc.nextLine();
+            String[] parts= line.split(",");
+
+            int day= Integer.parseInt (parts[0]-1);
+            int cIndex= commodityIndex(parts[1]);
+            int value = Integer.parseInt(parts[2]);
+            if (day>0&&day<DAYS&&cIndex!=-1) {
+                profit [m][day][cIndex]= value;
+            }
+            sc.close,
+ }
 
     public static String mostProfitableCommodityInMonth(int month) {
         return "DUMMY"; 
