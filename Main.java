@@ -97,8 +97,20 @@ return months[bestMonth];
 }
 
     public static int consecutiveLossDays(String comm) { 
-        return 1234; 
+        int c= commodityIndex(comm);
+if (c==-1) return -1;
+int max=0, current=0;
+for (int m=0;m<MONTHS;m++) {
+    for int d=0;d<DAYS; d++)   {
+        if(profit[m][d][c]<0) {
+            current++;
+            if (current>max)
+                max = current;
+        }else current = 0;
     }
+    }
+return max;
+}
     
     public static int daysAboveThreshold(String comm, int threshold) { 
         return 1234; 
