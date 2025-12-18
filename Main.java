@@ -113,15 +113,49 @@ return max;
 }
     
     public static int daysAboveThreshold(String comm, int threshold) { 
-        return 1234; 
+        int c = commodityIndex(comm);
+        if (c==-1)
+            return-1;
+        int count = 0;
+        for (int m=0;m<MONTHS;m++) 
+            for (int d=0;d<DAYS;d++)
+                if (profit[m][d][c]>threshold) count++;
+        return count;
     }
 
     public static int biggestDailySwing(int month) { 
-        return 1234; 
+        if (month<0||month>=MONTHS)
+        return -99999;
+int max=0;
+int previous = totalProfitOnDay (month,1);
+
+for ( int d=2;d<DAYS;d++) {
+    int current = totalProfitOnDay(month,d);
+    int diff = Math.abs(current-previous);
+    if (diff>max)
+        max=diff;
+    previous=current;
     }
+return max;
+}
     
     public static String compareTwoCommodities(String c1, String c2) { 
-        return "DUMMY is better by 1234"; 
+        int int1= commodityIndex(c1);
+        int int2= commodityIndex(c2);
+        if (int1 == -1||int2 == -1)
+            return"INVALID_COMMODİTY";
+
+        int s1=0;s2=0;
+        for (int m=0;m<MONTHS;m++)
+            for (int d=0;d<DAYS;d++) {
+                s1 += profit[m][d][int1];
+                s2 += profit[m][d][i2];
+            }
+        if (s1>s2)
+            return c1+"is better by"+(s1-s2);
+        if (s2>s1)
+            return c2+"is better by"+(s2-s1);
+        return "Equal";
     }
     
     public static String bestWeekOfMonth(int month) { 
