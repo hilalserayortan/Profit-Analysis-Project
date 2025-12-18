@@ -29,7 +29,7 @@ public class Main {
  }
 
     public static String mostProfitableCommodityInMonth(int month) {
-        return "DUMMY"; 
+        
     }
 
     public static int totalProfitOnDay(int month, int day) {
