@@ -29,8 +29,21 @@ public class Main {
  }
 
     public static String mostProfitableCommodityInMonth(int month) {
-        
-    }
+        if (month<0||month>=MONTHS)
+        return "INVAlLID_MONTH";
+
+            int max= Integer.MIN_VALUE;
+
+            for (int c=0;c<COMMS;c++) {
+                int sum= 0;
+                for (int d=0;d<DAYS;d++) sum+= profit[month][d][c];
+                if (sum>max) {
+                    max=sum;
+                    best=c;
+                }
+            }
+            return commodities[best] + " " + max;
+        }
 
     public static int totalProfitOnDay(int month, int day) {
         return 1234;
