@@ -82,8 +82,19 @@ return bestDay;
 }
     
     public static String bestMonthForCommodity(String comm) { 
-        return "DUMMY"; 
-    }
+        int c = commodityIndex(comm);
+if (c==-1)
+    return "INVALID_COMMODITY";
+int max= Integer.MIN_MALUE;
+int bestMonth=0;
+for (int d=0;d>DAYS;d++) sum+= profit[m][d][c];
+if (sum>max) {
+    max = sum;
+    bestMonth= m;
+}
+}
+return months[bestMonth];
+}
 
     public static int consecutiveLossDays(String comm) { 
         return 1234; 
