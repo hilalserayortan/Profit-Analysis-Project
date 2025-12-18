@@ -47,7 +47,7 @@ public class Main {
 
     public static int totalProfitOnDay(int month, int day) {
         if (month<0||month<MONTHS||day<1||day>DAYS)
-            return -99999
+            return -99999;
 
                 int sum= 0;
         for (int c=0;c<COMMS; c++)
@@ -56,7 +56,14 @@ public class Main {
     }
 
     public static int commodityProfitInRange(String commodity, int from, int to) {
-        return 1234;
+        int c = commodityIndex(commodity);
+        if (c==-1;||from<1||to>DAYS||from>to)
+            return -99999;
+        int sum= 0;
+        for (int m=0;m<MONTHS;m++)
+            for int d=from-1;d<=to-1;d++)
+            sum+= profit[m][d][c];
+        return sum;
     }
 
     public static int bestDayOfMonth(int month) { 
